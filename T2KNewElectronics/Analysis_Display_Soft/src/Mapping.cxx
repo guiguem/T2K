@@ -26,6 +26,8 @@ void Mapping::loadMapping()
 
     int i, j, connector;
 
+    std::cout << "Reading ChipA.txt" << std::endl;
+
     ifstream A((loc::mapping + "ChipA.txt").c_str());
     while (!A.eof())
     {
@@ -51,6 +53,7 @@ void Mapping::loadMapping()
     }
     A.close();
 
+    std::cout << "Reading ChipB.txt" << std::endl;
     ifstream B((loc::mapping + "ChipB.txt").c_str());
     while(!B.eof())
     {
@@ -74,6 +77,7 @@ void Mapping::loadMapping()
     }
     B.close();
 
+    std::cout << "Reading ChipC.txt" << std::endl;
     ifstream C((loc::mapping + "ChipC.txt").c_str());
     while(!C.eof())
     {
@@ -97,6 +101,7 @@ void Mapping::loadMapping()
     }
     C.close();
 
+    std::cout << "Reading ChipD.txt" << std::endl;
     ifstream D((loc::mapping + "ChipD.txt").c_str());
     while(!D.eof())
     {
@@ -125,12 +130,12 @@ void Mapping::loadMapping()
 }
 
 
-int Mapping::i(int card, int chip, int bin)
+int Mapping::i(const int& card, const int& chip, const int& bin)
 {
     return (m_ichip[card][chip][bin] + card*geom::padOnchipx);
 }
 
-int Mapping::j(int card, int chip, int bin)
+int Mapping::j(const int& card, const int& chip, const int& bin)
 {
     int result;
     if (card%2==0){result=m_jchip[card][chip][bin] + (n::chips-1-chip)*geom::padOnchipy;}

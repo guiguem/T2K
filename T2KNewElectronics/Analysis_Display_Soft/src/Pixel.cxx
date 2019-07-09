@@ -28,8 +28,8 @@ Pixel::Pixel(DAQ& daq, Mapping& map, int i, int j, int amp)
     m_amp = amp;
 
     // Pixel line
-    Float_t x[4] = {m_x-0.5*geom::dx, m_x-0.5*geom::dx, m_x+0.5*geom::dx, m_x+0.5*geom::dx};
-    Float_t y[4] = {m_y-0.5*geom::dy, m_y+0.5*geom::dy, m_y+0.5*geom::dy, m_y-0.5*geom::dy};
+    Float_t x[4] = {float(m_x-0.5*geom::dx), float(m_x-0.5*geom::dx), float(m_x+0.5*geom::dx), float(m_x+0.5*geom::dx)};
+    Float_t y[4] = {float(m_y-0.5*geom::dy), float(m_y+0.5*geom::dy), float(m_y+0.5*geom::dy), float(m_y-0.5*geom::dy)};
     m_line = new TPolyLine(4,x,y);
     m_line->SetLineColor(kGray);
     m_line->SetLineWidth(1);

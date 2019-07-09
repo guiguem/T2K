@@ -17,7 +17,7 @@ class DAQ
           if (res==-99 && detector==65){res=49;}
           return(res);
         }
-        int connector(int daqchannel){return(arc2detector[daq2arc[daqchannel]]);}
+        int connector(const int& daqchannel){return(arc2detector[daq2arc[daqchannel]]);}
 
         // Other
 

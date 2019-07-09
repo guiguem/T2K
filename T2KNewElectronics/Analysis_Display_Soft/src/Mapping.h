@@ -10,11 +10,11 @@ class Mapping
         void loadMapping();
 
         // Getters
-        int ichip(int card, int chip, int bin){return m_ichip[card][chip][bin];}
-        int jchip(int card, int chip, int bin){return m_jchip[card][chip][bin];}
-        int connector(int card, int chip, int ichip, int jchip){return m_connector[card][chip][ichip][jchip];}
-        int i(int card, int chip, int bin);
-        int j(int card, int chip, int bin);
+        int ichip(const int& card, const int& chip, const int& bin){return m_ichip[card][chip][bin];}
+        int jchip(const int& card, const int& chip, const int& bin){return m_jchip[card][chip][bin];}
+        int connector(const int& card, const int& chip, const int& ichip, const int& jchip){return m_connector[card][chip][ichip][jchip];}
+        int i(const int& card, const int& chip, const int& bin);
+        int j(const int& card, const int& chip, const int& bin);
 
         // Other
 
